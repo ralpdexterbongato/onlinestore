@@ -175,7 +175,7 @@
         <h1>Reviews/Comments for {{$product->name}}</h1>
         <div class="buyer-comments">
           <h2>By Firstname Lastname <span class="verified-buyer">verified purchase</span></h2>
-          <p>This is my comment for this prhahaoduct hahahathis is it this is my comment i love my vehicle now</p>
+          <p>This is my comment for thischansdajsjdajoduct hahahathis is it this is my comment i love my vehicle now</p>
         </div>
       </div>
     </div>
