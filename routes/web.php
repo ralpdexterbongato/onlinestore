@@ -13,7 +13,7 @@
 
 Route::get('/welcome','UsersController@getWelcome')->name('home');
 
-Route::get('register','UsersController@ViewRegisterForm')->middleware('guest');
+Route::get('register','UsersController@ViewRegisterForm')->name('registering')->middleware('guest');
 Route::post('register','UsersController@RegisterStore')->middleware('guest');
 Route::post('/logout','UsersController@Logout')->name('logging.out');
 Route::post('login','UsersController@LogIn')->name('logging.in');

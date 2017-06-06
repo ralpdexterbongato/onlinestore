@@ -244,8 +244,13 @@
         $('.modal-container-log').removeClass('active');
       });
 
+      /*JQ for Login and register first, in asking questions*/
+      $('#ask-login').click(function(){
+        $('.modal-container').removeClass('active');
+        $('.modal-container-log').addClass('active');
+      });
 
-
+      /*JQ for Searchbox in mobile*/
       $('.mobile-searchbox').click(function(){
         $('.modal-search').addClass('active');
       });

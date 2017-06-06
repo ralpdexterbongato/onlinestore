@@ -66,9 +66,9 @@
       </div>
     </div>
   </div>
-  <div class="view-item-bottom-container" style="background-color:red">
-    <div class="left-reviews-container" style="background-color:orange">
-      <div class="also-buys" style="background-color:violet">
+  <div class="view-item-bottom-container">
+    <div class="left-reviews-container" >
+      <div class="also-buys">
         <h1>People bought this product also bought</h1>
         <div class="related-container">
           <ul class="related-carousel">
@@ -96,9 +96,9 @@
           </ul>
         </div>
       </div>
-      <div class="ask-question" style="background-color:pink">
+      <div class="ask-question">
         <h1>Have questions about this product?</h1>
-        <div class="asking" style="background-color:orange">
+        <div class="asking">
           @if (Auth::check())
           <div class="ask-form">
             <form action="#" method="post">
@@ -110,11 +110,11 @@
           <div class="ask-not-login">
             <h1>Only logged in users are allowed to ask</h1>
             <div class="login-reg-ask">
-              <a href="#">Login</a> | <a href="#">Register</a>
+              <a  id="ask-login">Login</a> | <a href="{{route('registering')}}">Register</a>
             </div>
           </div>
         @endif
-          <div class="FAQ-info" style="background-color:violet">
+          <div class="FAQ-info">
             <h2>FAQ <a href="#">click here</a></h2>
             <ul>
               <li>Can i return the product if i did not like it?</li>
@@ -125,7 +125,7 @@
           </div>
         </div>
       </div>
-      <div class="reviews-from-buyer" style="background-color:#e5e5e5">
+      <div class="reviews-from-buyer">
         <h1>Reviews/Comments for {{$product->name}}</h1>
         <div class="buyer-comments">
           <h5 class="time-passed">1 week ago</h5>
@@ -145,13 +145,13 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <h3><i class="fa fa-thumbs-up"></i>  5 people found this helpful</h3>
         </div>
-        <div class="AddReviews-comments" style="background:orange">
-          <div class="comment-section" style="background:green">
-            <h1>What do you think about this product?</h1>
+        <div class="AddReviews-comments">
+          <div class="comment-section" >
+            <h1>What are your thoughts on this product?</h1>
             <textarea name="name" placeholder="Write your comment . . ."></textarea><br>
-            <button type="submit">submit</button>
+            <button type="submit">Submit</button>
           </div>
-          <div class="rating-section" style="background:yellow">
+          <div class="rating-section">
             <h1>Rate this product</h1>
             <p><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span></p>
             <h3>3 Stars</h3>
@@ -159,7 +159,7 @@
         </div>
       </div>
     </div>
-    <div class="right-best-sellers" style="background-color:blue">
+    <div class="right-best-sellers" >
       <h1>Checkout our best selling product's</h1>
       <ul>
         @foreach ($topsellings as $topselling)

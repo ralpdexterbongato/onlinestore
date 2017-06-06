@@ -314,9 +314,7 @@ span#cart-number
 		box-sizing: border-box;
 		width: 100%;
 		z-index: 16;
-		-webkit-box-shadow: -1px 10px 22px -5px rgba(0,0,0,0.75);
--moz-box-shadow: -1px 10px 22px -5px rgba(0,0,0,0.75);
-box-shadow: -1px 10px 22px -5px rgba(0,0,0,0.75);
+		border-bottom: 1px solid #2A2D37;
 	}
 	#cart a
 	{
@@ -2035,7 +2033,7 @@ color: #fff;
 {
 	position:absolute;
 	top: 10px;
-	background-color: orange;
+	background: orange;
 	color: #fff;
 	padding: 2px;
 	left: -5px;
@@ -2320,7 +2318,7 @@ display: none;
 .addcart-button button
 {
 	border-style: none;
-	background: #FC4600;
+	background:#FF8C00;
 	padding:10px 20px;
 	color: #fff;
 	font-size: 19px;
@@ -2328,7 +2326,7 @@ display: none;
 }
 .addcart-button button:hover
 {
-	background-color: #FF8C00;
+	background-color: #FF5900;
 	transition: background-color .5s;
 }
 .before-price
@@ -2444,6 +2442,7 @@ display: none;
 {
 	flex:3;
 	flex-direction: column;
+	border:1px solid #e1e1e1;
 }
 
 .also-buys
@@ -2463,7 +2462,9 @@ margin-bottom: 20px;
 {
 	flex:1;
 	padding: 20px;
-
+	border-top: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	color: #2A2D37;
 }
 .ask-question h1
 {
@@ -2534,6 +2535,10 @@ color: #fff;
 {
 	flex:1;
 	padding: 10px;
+	border-top:1px solid #e1e1e1;
+	border-bottom:1px solid #e1e1e1;
+	border-right:1px solid #e1e1e1;
+	background-color:#e5e5e5;
 }
 .right-best-sellers ul
 {
@@ -2550,7 +2555,8 @@ color: #fff;
 }
 .right-best-sellers ul li
 {
-	margin:20px;
+	margin:auto;
+
  width:250px;
  text-align: center;
  font-family: lato;
@@ -2588,6 +2594,10 @@ color: #fff;
 	{
 		flex-direction: row;
 	}
+	.right-best-sellers
+	{
+		border-left: 1px solid #e1e1e1;
+	}
 }
 
 /*ASKING FORM*/
@@ -2612,12 +2622,17 @@ color: #fff;
 }
 .asking > .ask-form > form > button
 {
-	background-color:#FF3D00;
+	background-color:#FF8C00;
 	border-style: none;
 	padding: 6px 12px;
 	font-size: 14px;
 	color: #fff;
 	margin-top: 10px;
+}
+.asking > .ask-form > form > button:hover
+{
+	background: #FF5B00;
+	transition: background .5s;
 }
 .ask-form
 {
@@ -2639,6 +2654,12 @@ color: #fff;
 {
 	font-family:serif;
 	color: #0078D7;
+	text-decoration: underline;
+}
+.login-reg-ask a:hover
+{
+	cursor:pointer;
+	text-decoration: none;
 }
 .FAQ-info
 {
@@ -2646,6 +2667,7 @@ color: #fff;
 	padding:10px;
 	box-sizing: border-box;
 	min-width: 200px;
+	background:#e5e5e5;
 
 }
 .FAQ-info h2
@@ -2668,6 +2690,7 @@ color: #fff;
 	font-family: lato;
 	font-size: 14px;
 	margin-bottom: 5px;
+	margin-left: 20px;
 }
 .FAQ-info ul li a
 {
@@ -2708,6 +2731,8 @@ color: #fff;
 }
 .buyer-comments
 {
+	background-color: #e5e5e5;
+	padding: 10px;
 	margin-top: 40px;
 }
 .buyer-comments h2
@@ -2743,11 +2768,7 @@ color: #fff;
 	color: #333;
 	float: right;
 }
-.buyer-comments
-{
-	background-color: pink;
-	padding: 10px;
-}
+
 .AddReviews-comments
 {
 	margin-top: 30px;
@@ -2764,27 +2785,37 @@ color: #fff;
 .AddReviews-comments h1
 {
 	margin-bottom: 20px;
+
 }
 
 .comment-section
 {
 	flex:2;
 	padding: 15px;
+	background: #e5e5e5;
+
 }
 .comment-section button
 {
 	font-family: lato;
 	color: #fff;
-	background-color:#FF4B00;
+	background-color:#FF8C00;
 	border-style: none;
 	padding: 6px 12px;
 	margin-top: 10px;
+}
+.comment-section button:hover
+{
+	background: #FF6A00;
+	animate:background .5s;
 }
 .rating-section
 {
 	flex:1;
 	padding:15px;
 	text-align: center;
+	background: #e5e5e5;
+
 }
 .rating-section p
 {
@@ -2814,5 +2845,12 @@ color: #fff;
 	{
 		flex-direction: column;
 	}
-
+	.comment-section
+	{
+		order:2;
+	}
+	.rating-section
+	{
+		order:1;
+	}
 }
