@@ -2456,7 +2456,7 @@ margin-bottom: 20px;
 .also-buys h1
 {
 	font-family: helvetica;
-	font-size: 20px;
+	font-size: 18px;
 	margin-bottom: 20px;
 }
 .ask-question
@@ -2468,7 +2468,7 @@ margin-bottom: 20px;
 .ask-question h1
 {
 	font-family: helvetica;
-	font-size:20px;
+	font-size:18px;
 }
 .reviews-from-buyer
 {
@@ -2479,7 +2479,7 @@ margin-bottom: 20px;
 .reviews-from-buyer h1
 {
 	font-family: helvetica;
-	font-size: 20px;
+	font-size: 18px;
 }
 @media (max-width:1000px) {
 	.view-item-bottom-container
@@ -2567,7 +2567,7 @@ color: #fff;
 .right-best-sellers ul li h1
 {
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 18px;
 	padding: 5px;
 	margin-bottom: 10px;
 
@@ -2624,6 +2624,22 @@ color: #fff;
 	flex:1;
 	margin-right: 20px;
 }
+.ask-not-login
+{
+	flex:1;
+
+}
+.login-reg-ask
+{
+	font-size: 25px;
+	text-align: center;
+	margin-top: 30px;
+}
+.login-reg-ask a
+{
+	font-family:serif;
+	color: #0078D7;
+}
 .FAQ-info
 {
 	flex:1;
@@ -2665,7 +2681,7 @@ color: #fff;
 	flex-wrap: wrap;
 	padding: 10px;
 }
-@media (max-width:400px) {
+@media (max-width:800px) {
 
 	.FAQ-info h2
 	{
@@ -2674,6 +2690,14 @@ color: #fff;
 	.FAQ-info
 	{
 		margin-top: 20px;
+	}
+	.ask-not-login
+	{
+		margin-top: 20px;
+	}
+	.asking
+	{
+		flex-direction: column;
 	}
 }
 
@@ -2768,7 +2792,7 @@ color: #fff;
 	margin-top: 30px;
 	font-size: 30px;
 	display: flex;
-	flex-wrap: nowrap;
+	flex-wrap:wrap-reverse;
 }
 .rating-section h3
 {
@@ -2785,7 +2809,7 @@ color: #fff;
 {
 	margin:auto;
 }
-@media (max-width:1100px) {
+@media (max-width:1150px) {
 	.AddReviews-comments
 	{
 		flex-direction: column;

@@ -104,7 +104,9 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product=product::find($id);
-        return view('onlinestore.eachItemView',compact('product'));
+        $relateProducts=product::inRandomOrder()->take(5)->get();
+        $topsellings=product::take(4)->orderBy('created_at')->get();
+        return view('onlinestore.eachItemView',compact('product','relateProducts','topsellings'));
     }
 
     /**

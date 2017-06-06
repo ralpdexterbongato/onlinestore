@@ -72,94 +72,48 @@
         <h1>People bought this product also bought</h1>
         <div class="related-container">
           <ul class="related-carousel">
-            <li class="carousel-cell">
-              <div class="image-separate">
-                <img src="/designIMG/honda.jpeg">
-              </div>
-              <h1>name</h1>
-              <p>₱ price</p>
-              <div class="brand-item">
-                brand
-              </div>
-              <div class="triangle-top-right">
-              </div>
-              <div class="triangle-left">
-              </div>
-              <div class="modal-item">
-                  <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  <a href="#"><i class="fa fa-heart"></i></a>
-                  <a href="products/"><i class="fa fa-eye"></i></a>
-              </div>
-            </li>
-            <li class="carousel-cell">
-              <div class="image-separate">
-                <img src="/designIMG/honda.jpeg">
-              </div>
-              <h1>name</h1>
-              <p>₱ price</p>
-              <div class="brand-item">
-                brand
-              </div>
-              <div class="triangle-top-right">
-              </div>
-              <div class="triangle-left">
-              </div>
-              <div class="modal-item">
-                  <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  <a href="#"><i class="fa fa-heart"></i></a>
-                  <a href="products/"><i class="fa fa-eye"></i></a>
-              </div>
-            </li>
-            <li class="carousel-cell">
-              <div class="image-separate">
-                <img src="/designIMG/honda.jpeg">
-              </div>
-              <h1>name</h1>
-              <p>₱ price</p>
-              <div class="brand-item">
-                brand
-              </div>
-              <div class="triangle-top-right">
-              </div>
-              <div class="triangle-left">
-              </div>
-              <div class="modal-item">
-                  <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  <a href="#"><i class="fa fa-heart"></i></a>
-                  <a href="products/"><i class="fa fa-eye"></i></a>
-              </div>
-            </li>
-            <li class="carousel-cell">
-              <div class="image-separate">
-                <img src="/designIMG/honda.jpeg">
-              </div>
-              <h1>name</h1>
-              <p>₱ price</p>
-              <div class="brand-item">
-                brand
-              </div>
-              <div class="triangle-top-right">
-              </div>
-              <div class="triangle-left">
-              </div>
-              <div class="modal-item">
-                  <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  <a href="#"><i class="fa fa-heart"></i></a>
-                  <a href="products/"><i class="fa fa-eye"></i></a>
-              </div>
-            </li>
+            @foreach ($relateProducts as $relateProduct)
+              <li class="carousel-cell">
+                <div class="image-separate">
+                  <img src="/storage/uploads/{{$relateProduct->images[0]->name}}">
+                </div>
+                <h1>{{$relateProduct->name}}</h1>
+                <p>₱ {{number_format($relateProduct->price)}}</p>
+                <div class="brand-item">
+                  {{$relateProduct->brand->name}}
+                </div>
+                <div class="triangle-top-right">
+                </div>
+                <div class="triangle-left">
+                </div>
+                <div class="modal-item">
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fa fa-heart"></i></a>
+                    <a href="{{route('products.show',[$relateProduct->id])}}"><i class="fa fa-eye"></i></a>
+                </div>
+              </li>
+            @endforeach
           </ul>
         </div>
       </div>
       <div class="ask-question" style="background-color:pink">
-        <h1>Questions about this product</h1>
+        <h1>Have questions about this product?</h1>
         <div class="asking" style="background-color:orange">
+          @if (Auth::check())
           <div class="ask-form">
             <form action="#" method="post">
               <label for="question"> Ask here :</label><textarea cols="59" name="question"></textarea><br>
               <button type="submit">Ask</button>
             </form>
           </div>
+        @else
+          <div class="ask-not-login">
+            <h1>Only logged in users are allowed to ask</h1>
+            <div class="login-reg-ask">
+              <a href="#">Login</a> | <a href="#">Register</a>
+            </div>
+          </div>
+        @endif
           <div class="FAQ-info" style="background-color:violet">
             <h2>FAQ <a href="#">click here</a></h2>
             <ul>
@@ -176,7 +130,7 @@
         <div class="buyer-comments">
           <h5 class="time-passed">1 week ago</h5>
           <h2>By Ralp Dexter Bongato <br><span class="verified-buyer"><i class="fa fa-check-circle"></i> verified purchase</span></h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>at nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <h3><i class="fa fa-thumbs-up"></i>  5 people found this helpful</h3>
         </div>
         <div class="buyer-comments">
@@ -208,14 +162,15 @@
     <div class="right-best-sellers" style="background-color:blue">
       <h1>Checkout our best selling product's</h1>
       <ul>
-        <li class="carousel-cell">
+        @foreach ($topsellings as $topselling)
+        <li>
           <div class="image-separate">
-            <img src="/designIMG/honda.jpeg">
+            <img src="/storage/uploads/{{ $topselling->images[0]->name}}">
           </div>
-          <h1>name</h1>
-          <p>₱ price</p>
+          <h1>{{ $topselling->name}}</h1>
+          <p>₱ {{ $topselling->price}}</p>
           <div class="brand-item">
-            brand
+            {{ $topselling->brand->name}}
           </div>
           <div class="triangle-top-right">
           </div>
@@ -224,66 +179,10 @@
           <div class="modal-item">
               <a href="#"><i class="fa fa-shopping-cart"></i></a>
               <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="products/"><i class="fa fa-eye"></i></a>
+              <a href="{{route('products.show',[ $topselling->id])}}"><i class="fa fa-eye"></i></a>
           </div>
         </li>
-        <li class="carousel-cell">
-          <div class="image-separate">
-            <img src="/designIMG/honda.jpeg">
-          </div>
-          <h1>name</h1>
-          <p>₱ price</p>
-          <div class="brand-item">
-            brand
-          </div>
-          <div class="triangle-top-right">
-          </div>
-          <div class="triangle-left">
-          </div>
-          <div class="modal-item">
-              <a href="#"><i class="fa fa-shopping-cart"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="products/"><i class="fa fa-eye"></i></a>
-          </div>
-        </li>
-        <li class="carousel-cell">
-          <div class="image-separate">
-            <img src="/designIMG/honda.jpeg">
-          </div>
-          <h1>name</h1>
-          <p>₱ price</p>
-          <div class="brand-item">
-            brand
-          </div>
-          <div class="triangle-top-right">
-          </div>
-          <div class="triangle-left">
-          </div>
-          <div class="modal-item">
-              <a href="#"><i class="fa fa-shopping-cart"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="products/"><i class="fa fa-eye"></i></a>
-          </div>
-        </li>
-        <li class="carousel-cell">
-          <div class="image-separate">
-            <img src="/designIMG/honda.jpeg">
-          </div>
-          <h1>name</h1>
-          <p>₱ price</p>
-          <div class="brand-item">
-            brand
-          </div>
-          <div class="triangle-top-right">
-          </div>
-          <div class="triangle-left">
-          </div>
-          <div class="modal-item">
-              <a href="#"><i class="fa fa-shopping-cart"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="products/"><i class="fa fa-eye"></i></a>
-          </div>
-        </li>
+        @endforeach
       </ul>
     </div>
   </div>
