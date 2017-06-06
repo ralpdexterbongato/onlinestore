@@ -171,11 +171,37 @@
           </div>
         </div>
       </div>
-      <div class="reviews-from-buyer" style="background-color:green">
+      <div class="reviews-from-buyer" style="background-color:#e5e5e5">
         <h1>Reviews/Comments for {{$product->name}}</h1>
         <div class="buyer-comments">
-          <h2>By Firstname Lastname <span class="verified-buyer">verified purchase</span></h2>
-          <p>This is my comment for thischansdajsjdajoduct hahahathis is it this is my comment i love my vehicle now</p>
+          <h5 class="time-passed">1 week ago</h5>
+          <h2>By Ralp Dexter Bongato <br><span class="verified-buyer"><i class="fa fa-check-circle"></i> verified purchase</span></h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3><i class="fa fa-thumbs-up"></i>  5 people found this helpful</h3>
+        </div>
+        <div class="buyer-comments">
+          <h5 class="time-passed">1 week ago</h5>
+          <h2>By Ralp Dexter Bongato <br><span class="verified-buyer"><i class="fa fa-check-circle"></i> verified purchase</span></h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3><i class="fa fa-thumbs-up"></i>  5 people found this helpful</h3>
+        </div>
+        <div class="buyer-comments">
+          <h5 class="time-passed">1 week ago</h5>
+          <h2>By Ralp Dexter Bongato <br><span class="verified-buyer"><i class="fa fa-check-circle"></i> verified purchase</span></h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h3><i class="fa fa-thumbs-up"></i>  5 people found this helpful</h3>
+        </div>
+        <div class="AddReviews-comments" style="background:orange">
+          <div class="comment-section" style="background:green">
+            <h1>What do you think about this product?</h1>
+            <textarea name="name" placeholder="Write your comment . . ."></textarea><br>
+            <button type="submit">submit</button>
+          </div>
+          <div class="rating-section" style="background:yellow">
+            <h1>Rate this product</h1>
+            <p><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span></p>
+            <h3>3 Stars</h3>
+          </div>
         </div>
       </div>
     </div>
