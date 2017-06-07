@@ -314,7 +314,11 @@ span#cart-number
 		box-sizing: border-box;
 		width: 100%;
 		z-index: 16;
-		border-bottom: 1px solid #2A2D37;
+		-ms-filter: drop-shadow(2px -11px 17px #000000);
+-webkit-filter: drop-shadow(2px -11px 17px #000000);
+-moz-filter: drop-shadow(2px -11px 17px #000000);
+-o-filter: drop-shadow(2px -11px 17px #000000);
+filter: drop-shadow(2px -11px 17px #000000);
 	}
 	#cart a
 	{

@@ -87,7 +87,7 @@
                 <div class="triangle-left">
                 </div>
                 <div class="modal-item">
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="{{route('carting',[$relateProduct->id])}}"><i class="fa fa-shopping-cart"></i></a>
                     <a href="#"><i class="fa fa-heart"></i></a>
                     <a href="{{route('products.show',[$relateProduct->id])}}"><i class="fa fa-eye"></i></a>
                 </div>
@@ -115,7 +115,7 @@
           </div>
         @endif
           <div class="FAQ-info">
-            <h2>FAQ <a href="#">click here</a></h2>
+            <h2>FAQ <a href="#">Click here</a></h2>
             <ul>
               <li>Can i return the product if i did not like it?</li>
               <li>How manny days do i have to wait?</li>

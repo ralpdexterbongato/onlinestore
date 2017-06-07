@@ -8,12 +8,13 @@ use App\image;
 use App\product;
 use Storage;
 use Img;
+use Session;
 class ProductsController extends Controller
 {
 
     public function __construct()
     {
-      $this->middleware('admin',['except'=>['show','index','MotorCategory','CarsCategory','VansCategory']]);
+      $this->middleware('admin',['except'=>['show','AddCart','index','MotorCategory','CarsCategory','VansCategory']]);
     }
     /**
      * Display a listing of the resource.
@@ -160,5 +161,25 @@ class ProductsController extends Controller
       $brands=brand::all();
       $vans=product::where('category', 'vans')->orderBy('created_at','desc')->paginate(9);
       return view('onlinestore.VansView',compact('vans','brands'));
+    }
+    public function AddCart($id)
+    {
+      $product=product::find($id);
+      $arraycart=[
+        'id'=>$product->id,
+        'stock'=>$product->stock,
+        'name'=>$product->name,
+        'pic'=>$product->images[0]->name,
+        'brand'=>$product->brand->name,
+      ];
+
+        
+        Session::push('carted-id',$product->id);
+        Session::push('carted-products',$arraycart);
+
+        return session('carted-products');
+
+
+
     }
 }
