@@ -63,7 +63,7 @@
                   @endif
 	  						</ul>
 	  					</li>
-	  					<li id="cart"><i class="fa fa-shopping-cart"></i><a href="#">My Cart</a> <span id="cart-number">0</span></li>
+	  					<li id="cart"><i class="fa fa-shopping-cart"></i><a href="#">My Cart</a> <span id="cart-number">{{count(Session::get('carted-products'))}}</span></li>
 	  				</ul>
 	  			</div>
 	  		</div>
@@ -151,7 +151,37 @@
     </div>
   </div>
 @endif
-
+<div class="cart-modal">
+  <div class="cart-item-container animated flip">
+    <h2 class="close-cart-modal"><i class="fa fa-times"></i></h2>
+    <h3>New item is added in your cart !</h3>
+    <ul>
+      <li>
+        <div class="image-separate">
+          <img src="/designIMG/honda.jpeg">
+        </div>
+        <h1>Name</h1>
+        <p>₱ 202020202</p>
+        <div class="brand-item">
+          brand
+        </div>
+        <div class="triangle-top-right">
+        </div>
+        <div class="triangle-left">
+        </div>
+        <div class="cart-modal-item">
+          <div class="check-icon-container">
+            <i class="fa fa-check"></i>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="cart-navi">
+      <a href="#" class="close-cart-modal">Continue shopping</a>
+      <a href="#" class="to-cart-list">Cart list & Check out</a>
+    </div>
+  </div>
+</div>
 </header>
 @section('body')
 @show
@@ -419,6 +449,19 @@
         var active = $('.item-view-image.active');
         active.removeClass('active');
         $('.item-view-image').eq(current).addClass('active');
+      });
+
+
+      /*JQ FOR POP UP MODAL FOR ADD TO CART BUTTON*/
+      $('.add-cart-click').click(function(event)
+       {
+         $('.cart-modal').addClass('active');
+
+      });
+
+      $('.close-cart-modal').click(function(event)
+      {
+        $('.cart-modal').removeClass('active');
       });
 
   });

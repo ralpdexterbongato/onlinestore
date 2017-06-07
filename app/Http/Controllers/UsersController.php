@@ -63,11 +63,11 @@ class UsersController extends Controller
     {
       $credentials = array('email' => $request->email,'password' => $request->password );
       if (Auth::attempt($credentials)) {
-          return redirect('/welcome');
+          return redirect()->back();
       }else
       {
         Session::flash('error-login','Incorrect email or password');
-        return redirect('/welcome');
+        return redirect()->back();
       }
     }
 }

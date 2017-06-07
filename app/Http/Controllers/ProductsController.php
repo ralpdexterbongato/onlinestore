@@ -173,12 +173,12 @@ class ProductsController extends Controller
         'brand'=>$product->brand->name,
       ];
 
-        
+
         Session::push('carted-id',$product->id);
         Session::push('carted-products',$arraycart);
 
-        return session('carted-products');
-
+        //return session('carted-products');
+        return redirect()->back();
 
 
     }
