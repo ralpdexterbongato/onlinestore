@@ -68,7 +68,25 @@ Welcome |Log In/Sign Up
             <ul id="owl-demo" class="owl-carousel owl-theme">
             @if(isset($features))
               @foreach ($features as $feature)
-                  <li id="feature"><div class="feature-image-separate"><img src="/storage/uploads/{{$feature->images[0]->name}}"></div><p>{{$feature->name}}</p><h1>₱ {{number_format($feature->price)}}</h1></li>
+                <li>
+                  <div class="image-separate">
+                    <img src="/storage/uploads/{{ $feature->images[0]->name}}">
+                  </div>
+                  <h1>{{ $feature->name}}</h1>
+                  <p>₱ {{ $feature->price}}</p>
+                  <div class="brand-item">
+                    {{ $feature->brand->name}}
+                  </div>
+                  <div class="triangle-top-right">
+                  </div>
+                  <div class="triangle-left">
+                  </div>
+                  <div class="modal-item">
+                      <a href="{{route('carting',[$feature->id])}}"><i class="fa fa-shopping-cart"></i></a>
+                      <a href="#"><i class="fa fa-heart"></i></a>
+                      <a href="{{route('products.show',[ $feature->id])}}"><i class="fa fa-eye"></i></a>
+                  </div>
+                </li>
               @endforeach
             @endif
             </ul>

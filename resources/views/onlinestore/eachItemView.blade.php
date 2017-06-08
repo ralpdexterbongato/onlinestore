@@ -44,7 +44,9 @@
           <h1>₱ {{number_format($product->price)}}</h1>
           <h2>Before <span class="before-price">₱ 200,000,000</span></h2>
           <h2>You saved 50%</h2>
-          <button type="submit" class="add-cart-click">ADD TO CART</button>
+          <form  action="{{route('carting',[$product->id])}}" method="get">
+            <button type="submit" class="add-cart-click">ADD TO CART</button>
+          </form>
         </div>
       </div>
       <div class="delivery-options">
@@ -87,7 +89,7 @@
                 <div class="triangle-left">
                 </div>
                 <div class="modal-item">
-                    <a href="{{route('carting',[$relateProduct->id])}}" class="add-cart-click"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="{{route('carting',[$relateProduct->id])}}"><i class="fa fa-shopping-cart"></i></a>
                     <a href="#"><i class="fa fa-heart"></i></a>
                     <a href="{{route('products.show',[$relateProduct->id])}}"><i class="fa fa-eye"></i></a>
                 </div>
@@ -177,7 +179,7 @@
           <div class="triangle-left">
           </div>
           <div class="modal-item">
-              <a href="#" class="add-cart-click"><i class="fa fa-shopping-cart"></i></a>
+              <a href="{{route('carting',[$topselling->id])}}"><i class="fa fa-shopping-cart"></i></a>
               <a href="#"><i class="fa fa-heart"></i></a>
               <a href="{{route('products.show',[ $topselling->id])}}"><i class="fa fa-eye"></i></a>
           </div>

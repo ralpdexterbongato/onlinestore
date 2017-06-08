@@ -767,12 +767,55 @@ width:100%;
 
 }
 
+.featured-images ul
+{
+ 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
+}
+.featured-images ul li
+{
+	margin:auto;
+ width:250px;
+ text-align: center;
+ font-family: lato;
+ position: relative;
+ margin-bottom: 50px;
+ border:1px solid #e5e5e5;
+
+}
+.featured-images ul li:hover .modal-item
+{
+	top: 0px;
+	display: block;
+	display: flex;
+
+}
+.featured-images ul li h1
+{
+	font-weight: 600;
+	font-size: 20px;
+	padding: 5px;
+	margin-bottom: 10px;
+
+}
+.featured-images ul li p
+{
+padding:10px;
+background-color: #1EB771;
+color: #fff;
+
+}
+.featured-images ul li img
+{
+	width: 100%;
+}
 /*Brand names slide*/
 
 .brandnames .image-container
 {
-	background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(/designIMG/brandback.jpg);
+	background:linear-gradient(rgba(255, 213, 139, 0.5),rgba(0,0,0,0.7)),url(/designIMG/brandback.jpg);
 	background-position:center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1390,7 +1433,7 @@ text-align:center;
 	left:0;
 	right: 0;
 	height: 100vh;
-	z-index:5;
+	z-index:16;
 	padding: 50px 20px;
 	background-color: rgba(0, 0, 0, 0.5);
 	display: none;
@@ -1501,10 +1544,12 @@ color: #fff;
 .cart-navi a.close-cart-modal
 {
 	background-color: #555;
+
 }
 .cart-navi a.close-cart-modal:hover
 {
 	background-color: #636363;
+	cursor: pointer;
 }
 
 /*ALL BRANDS HOME*/

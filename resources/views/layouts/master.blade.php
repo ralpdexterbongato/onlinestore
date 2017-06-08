@@ -156,14 +156,15 @@
     <h2 class="close-cart-modal"><i class="fa fa-times"></i></h2>
     <h3>New item is added in your cart !</h3>
     <ul>
+      @if (Session::has('recently-added'))
       <li>
         <div class="image-separate">
-          <img src="/designIMG/honda.jpeg">
+          <img src="/storage/uploads/{{Session::get('recently-added')->images[0]->name}}">
         </div>
-        <h1>Name</h1>
-        <p>₱ 202020202</p>
+        <h1>{{Session::get('recently-added')->name}}</h1>
+        <p>₱ {{number_format(Session::get('recently-added')->price)}}</p>
         <div class="brand-item">
-          brand
+          {{Session::get('recently-added')->brand->name}}
         </div>
         <div class="triangle-top-right">
         </div>
@@ -175,9 +176,10 @@
           </div>
         </div>
       </li>
+      @endif
     </ul>
     <div class="cart-navi">
-      <a href="#" class="close-cart-modal">Continue shopping</a>
+      <a class="close-cart-modal">Continue shopping</a>
       <a href="#" class="to-cart-list">Cart list & Check out</a>
     </div>
   </div>
@@ -361,17 +363,11 @@
             0:{
               items:1,
             },
-            400:{
-              items:1,
-            },
-            600:{
+            700:{
               items:2,
             },
-            790:{
-              items:3,
-            },
             1100:{
-              items:4,
+              items:3,
             },
             1300:{
               items:4,
@@ -453,12 +449,11 @@
 
 
       /*JQ FOR POP UP MODAL FOR ADD TO CART BUTTON*/
-      $('.add-cart-click').click(function(event)
-       {
-         $('.cart-modal').addClass('active');
 
-      });
 
+      @if (Session::has('recently-added'))
+        $('.cart-modal').addClass('active');
+      @endif
       $('.close-cart-modal').click(function(event)
       {
         $('.cart-modal').removeClass('active');

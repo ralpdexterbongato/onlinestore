@@ -165,21 +165,25 @@ class ProductsController extends Controller
     public function AddCart($id)
     {
       $product=product::find($id);
-      $arraycart=[
-        'id'=>$product->id,
-        'stock'=>$product->stock,
-        'name'=>$product->name,
-        'pic'=>$product->images[0]->name,
-        'brand'=>$product->brand->name,
-      ];
+
+      if ($product->stock >0)
+       {
+        $arraycart=[
+          'id'=>$product->id,
+          'stock'=>$product->stock,
+          'name'=>$product->name,
+          'pic'=>$product->images[0]->name,
+          'brand'=>$product->brand->name,
+        ];
 
 
-        Session::push('carted-id',$product->id);
         Session::push('carted-products',$arraycart);
-
-        //return session('carted-products');
+        Session::flash('recently-added',$product);
         return redirect()->back();
-
-
+      }
+      else
+      {
+        Session::flash('errorDisplays','Sorry, This item is out of stock.');
+      }
     }
 }
