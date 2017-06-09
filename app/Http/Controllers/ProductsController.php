@@ -14,7 +14,7 @@ class ProductsController extends Controller
 
     public function __construct()
     {
-      $this->middleware('admin',['except'=>['show','AddCart','index','MotorCategory','CarsCategory','VansCategory']]);
+      $this->middleware('admin',['except'=>['show','AddCart','index','MotorCategory','CarsCategory','VansCategory','DisplayCartList']]);
     }
     /**
      * Display a listing of the resource.
@@ -185,5 +185,9 @@ class ProductsController extends Controller
       {
         Session::flash('errorDisplays','Sorry, This item is out of stock.');
       }
+    }
+    public function DisplayCartList()
+    {
+      return view('onlinestore.cartedlistings');
     }
 }
