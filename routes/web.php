@@ -23,4 +23,4 @@ Route::get('motorcycles','ProductsController@MotorCategory')->name('motor.cat');
 Route::get('cars','ProductsController@CarsCategory')->name('cars.cat');
 Route::get('vans','ProductsController@VansCategory')->name('vans.cat');
 Route::get('/add-to-cart/{product}','ProductsController@AddCart')->name('carting');
-Route::get('/mycart-list','ProductsController@DisplayCartList');
+Route::get('/mycart-list','ProductsController@DisplayCartList')->name('orderlisting');

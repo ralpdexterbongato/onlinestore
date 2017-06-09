@@ -3088,7 +3088,7 @@ color: #fff;
 {
 	position: absolute;
 	display: flex;
-	top: -20px;
+	top:0;
 	right: 0;
 }
 .cart-list-labels span h3
@@ -3103,15 +3103,25 @@ color: #fff;
 {
 	display: flex;
 	min-height: 150px;
+	margin-bottom: 15px;
+	position: relative;
+	background: #fff;
+}
+.item-carted-data > h2
+{
+	position: absolute;
+	top: 0;
+	right: 5px;
+	color: #555;
 }
 .left-side-icd
 {
-	flex:2;
+	flex:3;
 	display: flex;
 }
 .right-side-icd
 {
-	flex:1;
+	flex:2;
 	display: flex;
 	justify-content: flex-end;
 	padding: 20px 0px;
@@ -3119,15 +3129,27 @@ color: #fff;
 
 .item-qty-cart
 {
-	margin-left: 20px;
-	margin-right: 20px;
-	width: 60px;
+	min-width: 60px;
+	display: flex;
+	max-height: 30px;
+	margin-top: 20px;
 }
+
 .item-price-cart
 {
 	min-width: 60px;
 	margin-left: 40px;
 	margin-right: 20px;
+	margin-top: 20px;
+
+}
+.item-price-cart h1
+{
+	font-family: lato;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 10px;
+	letter-spacing: 1px;
 }
 .product-carted-image
 {
@@ -3166,7 +3188,7 @@ color: #fff;
 }
 #carted-company
 {
-	font-family: lato;
+	font-family:helvetica;
 	font-size: 14px;
 	color: #555555;
 
@@ -3190,4 +3212,16 @@ color: #fff;
 .item-qty-cart input
 {
 	width:30px;
+	text-align: center;
+	margin:0px 5px;
+}
+.item-qty-cart #plus-qty
+{
+	margin-right: 10px;
+}
+.item-qty-cart button
+{
+	font-family: helvetica;
+	font-weight: bold;
+	font-size: 20px;
 }

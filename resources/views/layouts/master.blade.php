@@ -63,7 +63,7 @@
                   @endif
 	  						</ul>
 	  					</li>
-	  					<li id="cart"><i class="fa fa-shopping-cart"></i><a href="#">My Cart</a> <span id="cart-number">{{count(Session::get('carted-products'))}}</span></li>
+	  					<li id="cart"><i class="fa fa-shopping-cart"></i><a href="{{route('orderlisting')}}">My Cart</a> <span id="cart-number">{{count(Session::get('carted-products'))}}</span></li>
 	  				</ul>
 	  			</div>
 	  		</div>
@@ -457,6 +457,25 @@
       $('.close-cart-modal').click(function(event)
       {
         $('.cart-modal').removeClass('active');
+      });
+
+      $('#plus-qty').click(function(event) {
+
+          var oldval=$('.qty-input').val();
+          var newval=parseInt(oldval) + 1;
+          $('.qty-input').val(newval);
+      });
+
+      $('#minus-qty').click(function(event) {
+          var oldval=$('.qty-input').val();
+          if (oldval>0)
+         {
+          var newval=parseInt(oldval) - 1;
+          $('.qty-input').val(newval);
+          }else
+          {
+            $('.qty-input').val(0);
+          }
       });
 
   });

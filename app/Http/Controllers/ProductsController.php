@@ -168,18 +168,11 @@ class ProductsController extends Controller
 
       if ($product->stock >0)
        {
-        $arraycart=[
-          'id'=>$product->id,
-          'stock'=>$product->stock,
-          'name'=>$product->name,
-          'pic'=>$product->images[0]->name,
-          'brand'=>$product->brand->name,
-        ];
 
-
-        Session::push('carted-products',$arraycart);
+        Session::push('carted-products',$product);
         Session::flash('recently-added',$product);
         return redirect()->back();
+        //return Session::get('recently-added');
       }
       else
       {
