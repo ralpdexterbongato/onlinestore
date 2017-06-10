@@ -180,7 +180,7 @@
     </ul>
     <div class="cart-navi">
       <a class="close-cart-modal">Continue shopping</a>
-      <a href="#" class="to-cart-list">Cart list & Check out</a>
+      <a href="{{route('orderlisting')}}" class="to-cart-list">Cart list & Check out</a>
     </div>
   </div>
 </div>
@@ -458,31 +458,38 @@
       {
         $('.cart-modal').removeClass('active');
       });
+    @if (Session::has('carted-products'))
+      @foreach (Session::get('carted-products') as $cartedprod)
+      $('#plus-qty{{$cartedprod->id}}').click(function(event) {
 
-      $('#plus-qty').click(function(event) {
-
-          var oldval=$('.qty-input').val();
+          var oldval=$('.qty-input{{$cartedprod->id}}').val();
           var newval=parseInt(oldval) + 1;
-          $('.qty-input').val(newval);
+          $('.qty-input{{$cartedprod->id}}').val(newval);
       });
 
-      $('#minus-qty').click(function(event) {
-          var oldval=$('.qty-input').val();
+      $('#minus-qty{{$cartedprod->id}}').click(function(event) {
+          var oldval=$('.qty-input{{$cartedprod->id}}').val();
           if (oldval>0)
          {
           var newval=parseInt(oldval) - 1;
-          $('.qty-input').val(newval);
+          $('.qty-input{{$cartedprod->id}}').val(newval);
           }else
           {
-            $('.qty-input').val(0);
+            $('.qty-input{{$cartedprod->id}}').val(0);
           }
       });
-
+      @endforeach
+    @endif
   });
 
   </script>
 
-
+<script type="text/javascript">
+  function backBtn()
+  {
+    window.history.back();
+  }
+</script>
 
 </body>
 </html>

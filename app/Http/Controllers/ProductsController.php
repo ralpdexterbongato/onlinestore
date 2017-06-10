@@ -168,7 +168,12 @@ class ProductsController extends Controller
 
       if ($product->stock >0)
        {
-
+         foreach (Session::get('carted-products') as $cartedAlready) {
+           if ($id == $cartedAlready->id) {
+             Session::flash('notice','You already have this item in your cart');
+             return redirect()->back();
+           }
+         }
         Session::push('carted-products',$product);
         Session::flash('recently-added',$product);
         return redirect()->back();

@@ -3031,20 +3031,25 @@ color: #fff;
 /*CSS for Display Cartedlistings*/
 .continue-shop-container
 {
-	display: flex;
 	margin-left: 50px;
 	font-family: helvetica;
 	font-size: 14px;
-	color: #0078D7;
+
 }
-.continue-shop-container h4
+.continue-shop-container a h4
 {
 	margin-left: 5px;
+}
+.continue-shop-container a
+{
+	text-decoration: none;
+	color:#0078D7;
+	display: flex;
 }
 .cartlist-container
 {
 	display: flex;
-	height: 100vh;
+	min-height: 500px;
 	width: 100%;
 	padding:25px 50px;
 	box-sizing: border-box;
@@ -3055,6 +3060,7 @@ color: #fff;
 	flex:2;
 	border-top: 1px solid #e5e5e5;
 	padding: 20px;
+
 }
 .list-cart-all h1
 {
@@ -3067,6 +3073,63 @@ color: #fff;
 {
 	flex:1;
 	border-top: 1px solid #e5e5e5;
+	display: flex;
+	flex-direction: column;
+	padding:52px 20px 20px 20px;
+}
+.order-summary h1
+{
+	margin-bottom: 10px;
+	font-family: helvetica;
+	font-weight: bold;
+	font-size: 14px;
+	color: #2A2A2A;
+}
+.subtotals
+{
+	height: 110px;
+	border-top: 1px solid #e5e5e5;
+}
+.total
+{
+	height: 110px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-top: 1px solid #e5e5e5;
+}
+.total span,.subtotals span
+{
+	display: flex;
+	justify-content: space-between;
+	font-family: helvetica;
+	font-size: 14px;
+
+}
+.total span
+{
+	margin-top: 10px;
+}
+.subtotals .subtotal-data
+{
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+.subtotals span h2
+{
+	color: #555555;
+}
+.total span h3
+{
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.total p
+{
+	font-weight: bold;
+	font-size:17px;
+	letter-spacing: 1px;
+
 }
 .cart-list-labels
 {
@@ -3105,7 +3168,7 @@ color: #fff;
 	min-height: 150px;
 	margin-bottom: 15px;
 	position: relative;
-	background: #fff;
+	background: #F8F8F8;
 }
 .item-carted-data > h2
 {
@@ -3150,6 +3213,8 @@ color: #fff;
 	font-weight: bold;
 	margin-top: 10px;
 	letter-spacing: 1px;
+	white-space: nowrap;
+
 }
 .product-carted-image
 {
@@ -3176,7 +3241,7 @@ color: #fff;
 	margin-bottom: 6px;
 	margin-top: 6px;
 }
-.product-carted-data ul h1
+.product-carted-data ul h2
 {
 	margin-top: 20px;
 }
@@ -3195,7 +3260,7 @@ color: #fff;
 }
 #carted-item-remain
 {
-	color: #D06F2A;
+	color: #AA8A24;
 	font-family:lato;
 	font-size: 13px;
 }
@@ -3224,4 +3289,158 @@ color: #fff;
 	font-family: helvetica;
 	font-weight: bold;
 	font-size: 20px;
+}
+.button-checkout
+{
+	padding:12px 20px;
+	background: #F0720F;
+}
+.button-checkout h6
+{
+	font-family: helvetica;
+	font-size: 16px;
+	color: #EEE;
+	font-weight: 200;
+	text-align: center;
+}
+@media (max-width:1000px) {
+
+	.cartlist-container
+	{
+		flex-direction: column;
+	}
+}
+@media (max-width:800px) {
+	.left-side-icd
+	{
+		flex-direction: column;
+	}
+	.product-carted-data
+	{
+		text-align: center;
+		padding: 10px;
+	}
+	.Payment-FAQ-container
+	{
+		flex-direction: column;
+	}
+	.payment-methods-services
+	{
+		flex-direction: column;
+	}
+	.verified-by
+	{
+		display: flex;
+	}
+	.verified-by img
+	{
+		margin: auto;
+	}
+	.payment-logo-contain
+	{
+		margin:auto;
+	}
+
+}
+@media (max-width:600px)
+{
+		.cartlist-container
+		{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.item-carted-data
+		{
+			flex-direction: column;
+		}
+		.left-side-icd
+		{
+			order:2;
+		}
+		.right-side-icd
+		{
+			order:1;
+		}
+
+	}
+/*Bottom payment Informations css*/
+.Payment-FAQ-container
+{
+	display: flex;
+	margin-left: 50px;
+	margin-right: 50px;
+	box-sizing: border-box;
+	border-top: 1px solid #e5e5e5;
+}
+
+.payment-FAQ
+{
+	flex: 1;
+	padding: 35px 20px;
+
+}
+.payment-FAQ h1
+{
+	font-size: 15px;
+	font-weight: 600;
+	font-family: sans-serif;
+	color: #464A53;
+}
+.payment-FAQ p
+{
+	font-family: sans-serif;
+	line-height: 20px;
+	font-size: 14px;
+	color: #464A53;
+}
+.payment-methods-services
+{
+	display: flex;
+	min-height: 300px;
+	border-top: 1px solid #e5e5e5;
+	font-family: helvetica;
+	font-size: 16px;
+}
+.methods-ops
+{
+	flex:3;
+	padding: 30px 50px;
+}
+.methods-ops h1,.delivery-ops h1,.sealing h1
+{
+	margin-bottom: 25px;
+}
+.delivery-ops
+{
+	flex:1;
+	padding: 30px 50px;
+}
+.sealing
+{
+	flex:2;
+	padding: 30px 50px;
+}
+
+.method-logo
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+.payment-logo-contain
+{
+	width: 90px;
+
+}
+.payment-logo-contain img
+{
+	width: 100%;
+}
+.delivery-service
+{
+	display: flex;
+
+}
+.delivery-box2
+{
+	margin-left: 25px;
 }

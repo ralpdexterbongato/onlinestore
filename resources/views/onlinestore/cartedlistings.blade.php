@@ -7,14 +7,14 @@
   <section>
   <div class="list-cart-big-container">
     <div class="continue-shop-container">
-      <i class="fa fa-angle-left"></i><h4>Continue shopping</h4>
+      <a href="#" onclick="backBtn()"><i class="fa fa-angle-left"></i><h4>Continue shopping</h4></a>
     </div>
     <div class="cartlist-container">
-      <div class="list-cart-all"style="background:orange">
+      <div class="list-cart-all">
         <h1>My shopping cart</h1>
         <div class="cart-list-labels">
           @if (Session::has('carted-products'))
-            <h2>{{count(Session::get('carted-products'))}}ITEMS</h2>
+            <h2>{{count(Session::get('carted-products'))}} ITEMS</h2>
           @else
             <h2>No items is in your cart</h2>
           @endif
@@ -35,7 +35,7 @@
                       <li><span id="big-carted-name">{{$cartedEach->name}}</span></li>
                       <li><span id="carted-company">{{$cartedEach->brand->name}}</span></li>
                       <li><span id="carted-item-remain">only {{$cartedEach->stock}} items remaining</span></li>
-                      <h1><i class="fa fa-heart-o"></i> <span id="move-to-wish">Move to wishlist</span></h1>
+                      <h2><i class="fa fa-heart-o"></i> <span id="move-to-wish">Move to wishlist</span></h2>
                     </ul>
                   </div>
                 </div>
@@ -44,7 +44,7 @@
                     <h1>₱ {{number_format($cartedEach->price)}}</h1>
                   </div>
                   <div class="item-qty-cart">
-                    <button type="button" id="minus-qty">-</button><input type="text" class="qty-input" name="quantity" value="1" readonly><button type="button" id="plus-qty">+</button>
+                    <button type="button" id="minus-qty{{$cartedEach->id}}">-</button><input type="text" class="qty-input{{$cartedEach->id}}" name="quantity" value="0" readonly><button type="button" id="plus-qty{{$cartedEach->id}}">+</button>
                   </div>
                 </div>
                 <h2><i class="fa fa-times"></i></h2>
@@ -52,8 +52,84 @@
           @endforeach
         @endif
       </div>
-      <div class="order-summary" style="background-color:green">
-
+      <div class="order-summary">
+        <h1>Order summary</h1>
+        <div class="subtotals">
+          <span class="subtotal-data"><h2>Subtotal:</h2><p>₱ 1,333,292</p></span>
+          <span><h2>Installments:</h2><p>₱ 200,000 per month</p></span>
+        </div>
+        <div class="total">
+          <span><h3>Total:</h3><p>₱ 1,211,131.00</p></span>
+          <div class="button-checkout">
+            <h6>PROCEED TO CHECKOUT</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Payment-FAQ-container">
+      <div class="payment-FAQ">
+        <h1>When will i recieve my item?</h1>
+        <p>
+          The delivery timeframe is an estimate of when your item will be delivered to your shipping address. This includes order verification, item processing, plus carrier shipment times.<br>
+          We will provide more accurate information on your delivery dates during the checkout process.<br>
+          Learn more about Shipping & Delivery.
+        </p>
+      </div>
+      <div class="payment-FAQ">
+        <h1>What payment method could i use?</h1>
+        <p>To bring you the best online shopping experience, Lazada offers multiple payment methods:<br>
+            Cash On Delivery,<br>
+            Credit/ Debit Card (Mastercard, Visa, AMEX and JCB),<br>
+            BDO Installment,<br>
+            MegaLink,<br>
+            Philippine-Paypal accounts,<br>
+            Ipay88 (Bancnet),<br>
+            Philippine-Alipay accounts,<br>
+            Learn more about Payment options.
+        </p>
+      </div>
+      <div class="payment-FAQ">
+        <h1>How safe is my account with Xcart?</h1>
+        <p>All items on Lazada are guaranteed to be new, genuine, not defective or damaged.<br>
+            If this is not the case, you can return within 7 days for a full refund. Additionally, items covered under Satisfaction Guaranteed can be returned within 14 days from the date of delivery.<br>
+            Learn more about Returns & Refunds.
+        </p>
+      </div>
+    </div>
+    <div class="payment-methods-services">
+      <div class="methods-ops">
+        <h1>Payment methods</h1>
+        <div class="method-logo">
+           <div class="payment-logo-contain">
+             <img src="/designIMG/logopayment1.jpg" alt="paypal">
+           </div>
+           <div class="payment-logo-contain">
+             <img src="/designIMG/logopayment2.jpg" alt="mastercard">
+           </div>
+           <div class="payment-logo-contain">
+              <img src="/designIMG/logopayment3.jpg" alt="bdo">
+           </div>
+           <div class="payment-logo-contain">
+             <img src="/designIMG/jcb-logo.jpg" alt="jcb">
+           </div>
+        </div>
+      </div>
+      <div class="delivery-ops">
+        <h1>Delivery-services</h1>
+        <div class="delivery-service">
+          <div class="delivery-box">
+            <img src="/designIMG/lbc.png" alt="services1">
+          </div>
+          <div class="delivery-box2">
+            <img src="/designIMG/lex.png" alt="services2">
+          </div>
+        </div>
+      </div>
+      <div class="sealing">
+        <h1>Verified by</h1>
+        <div class="verified-by">
+          <img src="/designIMG/seal.png" alt="verified-seal">
+        </div>
       </div>
     </div>
   </div>
