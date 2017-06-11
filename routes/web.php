@@ -24,3 +24,6 @@ Route::get('cars','ProductsController@CarsCategory')->name('cars.cat');
 Route::get('vans','ProductsController@VansCategory')->name('vans.cat');
 Route::get('/add-to-cart/{product}','ProductsController@AddCart')->name('carting');
 Route::get('/mycart-list','ProductsController@DisplayCartList')->name('orderlisting');
+
+Route::post('/minus-quantity/{product}','ProductSessionPlusMin@subQTY')->name('subqty');
+Route::post('/add-quantity/{product}','ProductSessionPlusMin@addQTY')->name('addqty');

@@ -28,12 +28,12 @@
               <div class="item-carted-data">
                 <div class="left-side-icd">
                   <div class="product-carted-image">
-                    <img src="/storage/uploads/{{$cartedEach->images[0]->name}}" alt="prod-image">
+                    <img src="/storage/uploads/{{$cartedEach->pic}}" alt="prod-image">
                   </div>
                   <div class="product-carted-data">
                     <ul>
                       <li><span id="big-carted-name">{{$cartedEach->name}}</span></li>
-                      <li><span id="carted-company">{{$cartedEach->brand->name}}</span></li>
+                      <li><span id="carted-company">{{$cartedEach->brand}}</span></li>
                       <li><span id="carted-item-remain">only {{$cartedEach->stock}} items remaining</span></li>
                       <h2><i class="fa fa-heart"></i> <span id="move-to-wish">Move to wishlist</span></h2>
                     </ul>
@@ -44,7 +44,9 @@
                     <h1>₱ {{number_format($cartedEach->price)}}</h1>
                   </div>
                   <div class="item-qty-cart">
-                    <button type="button" id="minus-qty{{$cartedEach->id}}">-</button><input type="text" class="qty-input{{$cartedEach->id}}" name="quantity" value="0" readonly><button type="button" id="plus-qty{{$cartedEach->id}}">+</button>
+                    <button type="button" id="minus-qty{{$cartedEach->id}}">-</button><input type="text" class="qty-input{{$cartedEach->id}}" name="quantity" value="{{$cartedEach->qty}}" readonly><button type="button" id="plus-qty{{$cartedEach->id}}">+</button>
+                    <form class="minus-submit{{$cartedEach->id}}" action="{{route('subqty',[$cartedEach->id])}}" method="post">{{ csrf_field() }}</form>
+                    <form class="add-submit{{$cartedEach->id}}" action="{{route('addqty',[$cartedEach->id])}}" method="post">{{csrf_field()}}</form>
                   </div>
                 </div>
                 <h2><i class="fa fa-times"></i></h2>

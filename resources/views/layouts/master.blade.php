@@ -154,12 +154,12 @@
       @if (Session::has('recently-added'))
       <li>
         <div class="image-separate">
-          <img src="/storage/uploads/{{Session::get('recently-added')->images[0]->name}}">
+          <img src="/storage/uploads/{{Session::get('recently-added')->pic}}">
         </div>
         <h1>{{Session::get('recently-added')->name}}</h1>
         <p>₱ {{number_format(Session::get('recently-added')->price)}}</p>
         <div class="brand-item">
-          {{Session::get('recently-added')->brand->name}}
+          {{Session::get('recently-added')->brand}}
         </div>
         <div class="triangle-top-right">
         </div>
@@ -460,26 +460,16 @@
       @foreach (Session::get('carted-products') as $cartedprod)
       $('#plus-qty{{$cartedprod->id}}').click(function(event) {
 
-          var oldval=$('.qty-input{{$cartedprod->id}}').val();
-          var newval=parseInt(oldval) + 1;
-          $('.qty-input{{$cartedprod->id}}').val(newval);
+          $('.add-submit{{$cartedprod->id}}').submit();
       });
 
       $('#minus-qty{{$cartedprod->id}}').click(function(event) {
-          var oldval=$('.qty-input{{$cartedprod->id}}').val();
-          if (oldval>0)
-         {
-          var newval=parseInt(oldval) - 1;
-          $('.qty-input{{$cartedprod->id}}').val(newval);
-          }else
-          {
-            $('.qty-input{{$cartedprod->id}}').val(0);
-          }
+          $('.minus-submit{{$cartedprod->id}}').submit();
       });
       @endforeach
     @endif
 
-    /* This is the JQURY plugin for smooth scrolling in all browser*/
+
 
 
   });

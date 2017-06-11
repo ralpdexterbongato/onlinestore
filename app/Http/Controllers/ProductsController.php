@@ -166,6 +166,15 @@ class ProductsController extends Controller
     {
       $product=product::find($id);
 
+      $prodata= ['id'=>$product->id,
+      'name'=>$product->name,
+      'brand'=>$product->brand->name,
+      'pic'=>$product->images[0]->name,
+      'stock'=>$product->stock,
+      'price'=>$product->price,
+      'qty'=>'1' ];
+
+      $prodata= (object) $prodata;
       if ($product->stock > 0)
        {
          if(Session::has('carted-products'))
@@ -179,11 +188,12 @@ class ProductsController extends Controller
           }
 
 
-              Session::push('carted-products',$product);
-              Session::flash('recently-added',$product);
+              Session::push('carted-products',$prodata);
+              Session::flash('recently-added',$prodata);
               return redirect()->back();
               //return Session::get('recently-added');
-            
+              //return $product;
+
   }else
       {
         Session::flash('errorDisplays','Sorry, This item is out of stock.');

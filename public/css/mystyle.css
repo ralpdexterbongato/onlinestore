@@ -173,7 +173,8 @@ span#cart-number
 
 .lower-nav .logo a img
 {
-	width: 100%;
+	width: 200px;
+	height: 80px;
 }
 .lower-nav .logo
 {
