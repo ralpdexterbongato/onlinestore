@@ -35,7 +35,7 @@
                       <li><span id="big-carted-name">{{$cartedEach->name}}</span></li>
                       <li><span id="carted-company">{{$cartedEach->brand->name}}</span></li>
                       <li><span id="carted-item-remain">only {{$cartedEach->stock}} items remaining</span></li>
-                      <h2><i class="fa fa-heart-o"></i> <span id="move-to-wish">Move to wishlist</span></h2>
+                      <h2><i class="fa fa-heart"></i> <span id="move-to-wish">Move to wishlist</span></h2>
                     </ul>
                   </div>
                 </div>
@@ -68,16 +68,16 @@
     </div>
     <div class="Payment-FAQ-container">
       <div class="payment-FAQ">
-        <h1>When will i recieve my item?</h1>
-        <p>
+        <h1 class="wow fadeInUp" data-wow-duration="1.5s">When will i recieve my item?</h1>
+        <p class="wow fadeInUp" data-wow-duration="2.5s">
           The delivery timeframe is an estimate of when your item will be delivered to your shipping address. This includes order verification, item processing, plus carrier shipment times.<br>
           We will provide more accurate information on your delivery dates during the checkout process.<br>
           Learn more about Shipping & Delivery.
         </p>
       </div>
       <div class="payment-FAQ">
-        <h1>What payment method could i use?</h1>
-        <p>To bring you the best online shopping experience, Lazada offers multiple payment methods:<br>
+        <h1 class="wow fadeInUp" data-wow-duration="2.5s">What payment method could i use?</h1>
+        <p class="wow fadeInUp" data-wow-duration="3s">To bring you the best online shopping experience, Lazada offers multiple payment methods:<br>
             Cash On Delivery,<br>
             Credit/ Debit Card (Mastercard, Visa, AMEX and JCB),<br>
             BDO Installment,<br>
@@ -89,8 +89,8 @@
         </p>
       </div>
       <div class="payment-FAQ">
-        <h1>How safe is my account with Xcart?</h1>
-        <p>All items on Lazada are guaranteed to be new, genuine, not defective or damaged.<br>
+        <h1 class="wow fadeInUp" data-wow-duration="3.5s">How safe is my account with Xcart?</h1>
+        <p class="wow fadeInUp" data-wow-duration="4s">All items on Lazada are guaranteed to be new, genuine, not defective or damaged.<br>
             If this is not the case, you can return within 7 days for a full refund. Additionally, items covered under Satisfaction Guaranteed can be returned within 14 days from the date of delivery.<br>
             Learn more about Returns & Refunds.
         </p>
@@ -128,7 +128,7 @@
       <div class="sealing">
         <h1>Verified by</h1>
         <div class="verified-by">
-          <img src="/designIMG/seal.png" alt="verified-seal">
+          <img class="wow rollIn" data-wow-duration="3s" src="/designIMG/seal.png" alt="verified-seal">
         </div>
       </div>
     </div>

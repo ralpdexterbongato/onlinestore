@@ -52,18 +52,18 @@ Welcome |Log In/Sign Up
 
 
     <div class="tripic-container">
-      <h1> Available categories </h1>
-      <p class="tripic-parag">labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h1 class="wow fadeInUp" data-wow-duration="1s"> Available categories </h1>
+      <p class="tripic-parag wow fadeInUp" data-wow-duration="2s">labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class="tri-pics">
             <ul>
-                <div><li><a href="{{route('motor.cat')}}"><img src="/designIMG/motor.jpg"></a><p> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p></li></div>
-                <div><li><a href="{{route('cars.cat')}}"><img src="/designIMG/carwel.jpg"></a><p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p></li></div>
-                <div><li><a href="{{route('vans.cat')}}"><img src="/designIMG/vanbutton.jpg"></a><p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p></li></div>
+                <div><li><a href="{{route('motor.cat')}}"><img src="/designIMG/motor.jpg"></a><p class="wow fadeInUp" data-wow-duration="1s"> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p></li></div>
+                <div><li><a href="{{route('cars.cat')}}"><img src="/designIMG/carwel.jpg"></a><p class="wow fadeInUp" data-wow-duration="2s"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p></li></div>
+                <div><li><a href="{{route('vans.cat')}}"><img src="/designIMG/vanbutton.jpg"></a><p class="wow fadeInUp" data-wow-duration="3s">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p></li></div>
             </ul>
         </div>
     </div>
     <div class="featured-container">
-        <h2> Check our latest product's </h2>
+        <h2 class="wow fadeInUp" data-wow-duration="2s"> Check our latest product's </h2>
         <div class="featured-images">
             <ul id="owl-demo" class="owl-carousel owl-theme">
             @if(isset($features))
@@ -93,8 +93,8 @@ Welcome |Log In/Sign Up
         </div>
     </div>
     <div class="brandnames">
-      <h2> Find your favourite brand here </h2>
-      <p id="brandname-parag">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      <h2 class="wow fadeInUp" data-wow-duration="1s"> Find your favourite brand here </h2>
+      <p id="brandname-parag" class="wow fadeInUp" data-wow-duration="2s">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
         <div class="image-container">
         @if(isset($features))

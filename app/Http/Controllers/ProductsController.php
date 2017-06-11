@@ -166,20 +166,25 @@ class ProductsController extends Controller
     {
       $product=product::find($id);
 
-      if ($product->stock >0)
+      if ($product->stock > 0)
        {
-         foreach (Session::get('carted-products') as $cartedAlready) {
-           if ($id == $cartedAlready->id) {
-             Session::flash('notice','You already have this item in your cart');
-             return redirect()->back();
-           }
-         }
-        Session::push('carted-products',$product);
-        Session::flash('recently-added',$product);
-        return redirect()->back();
-        //return Session::get('recently-added');
-      }
-      else
+         if(Session::has('carted-products'))
+         {
+             foreach (Session::get('carted-products') as $cartedAlready) {
+               if ($id == $cartedAlready->id) {
+                 Session::flash('notice','You already have this item in your cart');
+                 return redirect()->back();
+               }
+             }
+          }
+
+
+              Session::push('carted-products',$product);
+              Session::flash('recently-added',$product);
+              return redirect()->back();
+              //return Session::get('recently-added');
+            
+  }else
       {
         Session::flash('errorDisplays','Sorry, This item is out of stock.');
       }

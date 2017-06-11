@@ -10,13 +10,8 @@
     <link rel="stylesheet" href="/css/animate.css">
     <link rel="stylesheet" href="/owl/dist/assets/owl.carousel.css">
     <link rel="stylesheet" href="/owl/dist/assets/owl.theme.default.css">
-    <link rel="stylesheet" href="https://npmcdn.com/flickity@1.2/dist/flickity.css">
-<!-- or -->
-<link rel="stylesheet" href="https://npmcdn.com/flickity@1.2/dist/flickity.min.css">
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/flickity.min.css">
+    <script type="text/javascript" src="/js/jquery.js"></script>
 
 
 </head>
@@ -191,11 +186,11 @@
   <div class="advantages">
       <div class="advantages-container">
           <ul>
-              <li><i class="fa fa-truck"></i><h1>Free shipping</h1></li>
-              <li><i class="fa fa-gift"></i><h1>Special gift cards</h1></li>
-              <li><i class="fa fa-star"></i><h1>New products everyday</h1></li>
-              <li><i class="fa fa-cog"></i><h1>We work 24/7</h1></li>
-              <li><i class="fa fa-cog"></i><h1>Trying on before buying</h1></li>
+              <li class="wow fadeInUp" data-wow-duration="1s"><i class="fa fa-truck"></i><h1>Free shipping</h1></li>
+              <li class="wow fadeInUp" data-wow-duration="2s"><i class="fa fa-gift"></i><h1>Special gift cards</h1></li>
+              <li class="wow fadeInUp" data-wow-duration="3s"><i class="fa fa-star"></i><h1>New products everyday</h1></li>
+              <li class="wow fadeInUp" data-wow-duration="4s"><i class="fa fa-cog"></i><h1>We work 24/7</h1></li>
+              <li class="wow fadeInUp" data-wow-duration="5s"><i class="fa fa-cog"></i><h1>Trying on before buying</h1></li>
           </ul>
       </div>
   </div>
@@ -209,27 +204,27 @@
   <div class="links">
       <div class="links-container">
           <div class="link">
-              <ul><h1>Categories</h1>
+              <ul><h1 class="wow fadeInUp" data-wow-duration="1s">Categories</h1>
                       <li><a href="#">Apparel</a></li>
                       <li><a href="#">Goods</a></li>
                       <li><a href="#">Toys</a></li>
               </ul>
           </div>
           <div class="link">
-              <ul><h1>Sales</h1>
+              <ul><h1 class="wow fadeInUp" data-wow-duration="2s">Sales</h1>
                       <li><a href="#">Comming Soon</a></li>
                       <li><a href="#">New</a></li>
               </ul>
           </div>
           <div class="link">
-              <ul><h1>Info links</h1>
+              <ul><h1 class="wow fadeInUp" data-wow-duration="3s">Info links</h1>
                       <li><a href="#">Shipping</a></li>
                       <li><a href="#">Site Map</a></li>
                       <li><a href="#">Terms & Conditions</a></li>
               </ul>
           </div>
           <div class="link">
-              <ul><h1>Services</h1>
+              <ul><h1 class="wow fadeInUp" data-wow-duration="4s">Services</h1>
                       <li><a href="#">Shipping</a></li>
                       <li><a href="#">Contact Us</a></li>
               </ul>
@@ -240,15 +235,18 @@
 		<h3>&copy; 2017 - 2018 X-Cart. All rights reserved. Powered by Dexter's online shop software</h3>
 	</div>
 </footer>
-<script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.js"></script>
-<!-- or -->
-<script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
+
+<script type="text/javascript" src="/js/wow.js"></script>
+<script type="text/javascript" src="/js/flickity.pkgd.min.js"></script>
 <script type="text/javascript" src="/bootstrap3/js/bootstrap.js"></script>
 <script type="text/javascript" src="/bootstrap3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/owl/dist/owl.carousel.min.js"></script>
 <script type="text/javascript">
 
     $(document).ready(function(){
+
+      new WOW().init(); //used to start the wow plugin for animated scrolling
+
       $('#mobile-nav').click(function()
       {
         $('.modal > ul > li > i').addClass('rotateIn');
@@ -355,7 +353,7 @@
           items :5,
           loop:true,
           responsiveClass:true,
-          margin:10,
+          margin:12,
           autoplayHoverPause:true,
           autoplay:true,
           responsive:
@@ -480,6 +478,10 @@
       });
       @endforeach
     @endif
+
+    /* This is the JQURY plugin for smooth scrolling in all browser*/
+
+
   });
 
   </script>
