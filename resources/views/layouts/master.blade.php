@@ -70,12 +70,18 @@
 				<div class="lownav">
 					<ul>
 						<li class="sizable"><a href="/welcome" class="{{current_page('welcome') ? 'active' : ''}}">HOME</a></li>
-						<li class="sizable"><a href="#" class="{{current_page('hotdeals') ? 'active' : ''}}">HOT DEALS</a></li>
+						<li class="sizable looking"><a href="#" class="{{current_page('hotdeals') ? 'active' : ''}}">LOOKING FOR</a>
+              <ul class="category-nav-top">
+                <li id="category-first"><a href="#">Cars</a></li>
+                <li><a href="#">Vans</a></li>
+                <li><a href="#">Motorcycles</a></li>
+              </ul>
+            </li>
 						<li class="sizable"><a href="/brands" class="{{current_page('brands') ? 'active' : ''}}">BRANDS</a></li>
 						<li class="sizable"><a href="#" class="{{current_page('shipping') ? 'active' : ''}}">SHIPPING</a></li>
 						<li class="sizable" id="droping"><i class="fa fa-angle-down">
 						</i>
-							<ul>
+							<ul class="hideable-contain">
 								<li class="hideable drop" ><a href="#" class="{{current_page('new') ? 'active' : ''}}">NEW!</a></li>
 								<li class="hideable"><a href="#" class="{{current_page('comming') ? 'active' : ''}}">COMMING SOON</a></li>
 								<li class="hideable"><a href="#" class="{{current_page('contact') ? 'active' : ''}}">CONTACT US</a></li>

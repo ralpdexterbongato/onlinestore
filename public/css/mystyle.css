@@ -187,11 +187,48 @@ span#cart-number
 	padding: 20px 100px;
 
 }
+.looking
+{
+	position: relative;
+}
 
+.looking ul
+{
+	position: absolute;
+	z-index: 16;
+	display: none;
+	width: 135px;
+	background:#fff;
+}
+.looking:hover ul
+{
+
+	display: flex;
+	flex-direction: column;
+	display: block;
+	box-sizing: border-box;
+}
+.icon-drop
+{
+	background: green;
+}
+#category-first
+{
+	margin-top: 40px;
+}
+.looking li a
+{
+	color: #3B3B3B;
+}
+.looking li
+{
+	padding: 9px 12px;
+
+}
 .lownav ul .sizable
 {
 	display: inline-block;
-	margin-left: 35px;
+	margin-left: 30px;
 	font-family: helvetica;
 	font-weight: 600;
 	font-size: 17px;
@@ -223,7 +260,7 @@ span#cart-number
 }
 @media(max-width: 1349px)
 {
-	.lownav ul .sizable ul
+	.lownav ul .sizable .hideable-contain
 	{
 		position:absolute;
 		display: none;
@@ -348,12 +385,12 @@ filter: drop-shadow(2px -11px 17px #000000);
 }
 @media(min-width: 1350px)
 {
-	.lownav ul .sizable i
+	.lownav ul #droping i
 	{
 		display: none;
 	}
 
-	.lownav ul .sizable ul
+	.lownav ul .sizable ul.hideable-contain
 	{
 		display: flex;
 
@@ -623,18 +660,7 @@ color: black;
 	padding-left: 20px;
 	padding-right: 20px;
 }
-.tripic-parag
-{
-	font-family: helvetica;
-	font-size: 14px;
-	max-width: 500px;
-	margin:0 auto;
-	color: #3E4150;
-	line-height: 22px;
-	text-align:center;
-	margin-bottom: 20px;
 
-}
 .tripic-container h1
 {
 	margin-bottom: 30px;
