@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('stock');
             $table->string('size');
             $table->string('color');
-            $table->bigInteger('price');
+            $table->decimal('price',11,2);
             $table->string('category');
             $table->string('brand_id');
             $table->timestamps();

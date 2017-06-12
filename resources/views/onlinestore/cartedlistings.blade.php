@@ -41,7 +41,7 @@
                 </div>
                 <div class="right-side-icd">
                   <div class="item-price-cart">
-                    <h1>₱ {{number_format($cartedEach->price)}}</h1>
+                    <h1>₱ {{number_format($cartedEach->price,'2','.',',')}}</h1>
                   </div>
                   <div class="item-qty-cart">
                     <button type="button" id="minus-qty{{$cartedEach->id}}">-</button><input type="text" class="qty-input{{$cartedEach->id}}" name="quantity" value="{{$cartedEach->qty}}" readonly><button type="button" id="plus-qty{{$cartedEach->id}}">+</button>
@@ -57,11 +57,20 @@
       <div class="order-summary">
         <h1>Order summary</h1>
         <div class="subtotals">
-          <span class="subtotal-data"><h2>Subtotal:</h2><p>₱ 1,333,292</p></span>
-          <span><h2>Installments:</h2><p>₱ 200,000 per month</p></span>
-        </div>
-        <div class="total">
-          <span><h3>Total:</h3><p>₱ 1,211,131.00</p></span>
+          @if(Session::has('subtotalsT'))
+            <span class="subtotal-data"><h2>Subtotal:</h2><p>₱ {{number_format(Session::get('subtotalsT')->subtotal, 2, '.', ',')}} </p></span>
+            <span><h2>Installments:</h2><p>₱ {{number_format(Session::get('subtotalsT')->install,'2','.',',')}} per month</p></span>
+          </div>
+          <div class="total">
+            <span><h3>Total:</h3><p>₱ {{number_format(Session::get('subtotalsT')->subtotal,'2','.',',')}}</p></span>
+          @else
+            <span class="subtotal-data"><h2>Subtotal:</h2><p>₱ 0.00 </p></span>
+            <span><h2>Installments:</h2><p>₱ 0.00 per month</p></span>
+          </div>
+          <div class="total">
+            <span><h3>Total:</h3><p>₱ 0.00</p></span>
+
+          @endif
           <div class="button-checkout">
             <h6>PROCEED TO CHECKOUT</h6>
           </div>

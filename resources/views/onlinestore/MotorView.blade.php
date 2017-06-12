@@ -18,7 +18,7 @@
         <img src="/storage/uploads/{{$motor->images[0]->name}}">
       </div>
       <h1>{{$motor->name}}</h1>
-      <p>₱ {{number_format($motor->price)}}</p>
+      <p>₱ {{number_format($motor->price, 2, '.', ',')}}</p>
       <div class="brand-item">
         {{$motor->brand->name}}
       </div>

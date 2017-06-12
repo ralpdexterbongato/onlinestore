@@ -36,6 +36,6 @@
 
   </div>
   <div class="pagination-contain">
-    {!!$vans->links()!!}
+    {{$vans->links()}}
   </div>
 @endsection

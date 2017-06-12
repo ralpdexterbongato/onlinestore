@@ -181,7 +181,18 @@ class ProductsController extends Controller
          {
              foreach (Session::get('carted-products') as $cartedAlready) {
                if ($id == $cartedAlready->id) {
-                 Session::flash('notice','You already have this item in your cart');
+                 if ($cartedAlready->stock > $cartedAlready->qty)
+                 {
+
+
+                 $oldval=$cartedAlready->qty;
+                 $cartedAlready->qty = $oldval + 1;
+                 Session::flash('recently-added',$prodata);
+
+               }else
+               {
+                 Session::flash('notice','Sorry ,Product stock is not enough ');
+               }
                  return redirect()->back();
                }
              }
@@ -201,6 +212,26 @@ class ProductsController extends Controller
     }
     public function DisplayCartList()
     {
-      return view('onlinestore.cartedlistings');
+
+      if(Session::has('carted-products'))
+      {
+          $subtotal=0;
+          foreach (Session::get('carted-products') as $cartedall)
+          {
+            $pricecarted = $cartedall->price;
+            $quant = $cartedall->qty;
+            $total = $pricecarted * $quant;
+            $subtotal = $total + $subtotal;
+
+          }
+          $installment = $subtotal / 12;
+          $summary = array('subtotal' => $subtotal,'install'=>$installment);
+          $summary = (object) $summary;
+          Session::put('subtotalsT',$summary);
+          return view('onlinestore.cartedlistings');
+      }else
+      {
+        return view('onlinestore.cartedlistings');
+      }
     }
 }
