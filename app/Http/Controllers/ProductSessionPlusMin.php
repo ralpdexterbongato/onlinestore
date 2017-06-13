@@ -44,4 +44,24 @@ class ProductSessionPlusMin extends Controller
 
       }
     }
+
+    public function DelCarted($id)
+    {
+      if (Session::has('carted-products'))
+      {
+
+        $currentAll=Session::get('carted-products');
+        foreach (Session::get('carted-products') as $cartednow)
+        {
+
+          if ($cartednow->id == $id)
+          {
+            Session::flush('carted-products',$cartednow);
+            return redirect()->back();
+          }
+
+        }
+
+      }
+    }
 }

@@ -27,3 +27,4 @@ Route::get('/mycart-list','ProductsController@DisplayCartList')->name('orderlist
 
 Route::post('/minus-quantity/{product}','ProductSessionPlusMin@subQTY')->name('subqty');
 Route::post('/add-quantity/{product}','ProductSessionPlusMin@addQTY')->name('addqty');
+Route::delete('/remove-carted/{product}','ProductSessionPlusMin@DelCarted')->name('remove-cart');

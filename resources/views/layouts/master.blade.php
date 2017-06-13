@@ -475,12 +475,11 @@
       @endforeach
     @endif
 
-
-
-
   });
 
   </script>
+
+  
 
 <script type="text/javascript">
   function backBtn()
