@@ -72,9 +72,9 @@
 						<li class="sizable"><a href="/welcome" class="{{current_page('welcome') ? 'active' : ''}}">HOME</a></li>
 						<li class="sizable looking"><a href="#" class="{{current_page('hotdeals') ? 'active' : ''}}">LOOKING FOR</a>
               <ul class="category-nav-top">
-                <li id="category-first"><a href="#">Cars</a></li>
-                <li><a href="#">Vans</a></li>
-                <li><a href="#">Motorcycles</a></li>
+                <li id="category-first"><a href="{{route('cars.cat')}}">Cars</a></li>
+                <li><a href="{{route('vans.cat')}}">Vans</a></li>
+                <li><a href="{{route('motor.cat')}}">Motorcycles</a></li>
               </ul>
             </li>
 						<li class="sizable"><a href="/brands" class="{{current_page('brands') ? 'active' : ''}}">BRANDS</a></li>
@@ -359,7 +359,7 @@
           items :5,
           loop:true,
           responsiveClass:true,
-          margin:12,
+          margin:5,
           autoplayHoverPause:true,
           autoplay:true,
           responsive:
@@ -479,7 +479,7 @@
 
   </script>
 
-  
+
 
 <script type="text/javascript">
   function backBtn()

@@ -191,7 +191,7 @@ class ProductsController extends Controller
 
                }else
                {
-                 Session::flash('notice','Sorry ,Product stock is not enough ');
+                 Session::flash('notice','Sorry ,Product stock is not enough for your order ');
                }
                  return redirect()->back();
                }
@@ -207,7 +207,7 @@ class ProductsController extends Controller
 
   }else
       {
-        Session::flash('errorDisplays','Sorry, This item is out of stock.');
+        Session::flash('errorDisplays','Item out of stock.');
       }
     }
     public function DisplayCartList()

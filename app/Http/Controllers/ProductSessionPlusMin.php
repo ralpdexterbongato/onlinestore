@@ -11,14 +11,14 @@ class ProductSessionPlusMin extends Controller
       foreach (Session::get('carted-products') as $allcarted) {
         if($allcarted->id == $id)
         {
-          if ($allcarted->qty>0)
+          if ($allcarted->qty>1)
           {
-
             $oldval = $allcarted->qty;
             $allcarted->qty = $oldval - 1;
             return redirect()->back();
           }else
           {
+
             return redirect()->back();
           }
         }

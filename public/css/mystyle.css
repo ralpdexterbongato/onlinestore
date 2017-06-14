@@ -659,6 +659,7 @@ color: black;
 	margin-top: 90px;
 	padding-left: 20px;
 	padding-right: 20px;
+	box-sizing: border-box;
 }
 
 .tripic-container h1
@@ -707,7 +708,7 @@ color: black;
 }
 .tri-pics ul li a img
 {
-
+	width: 100%;
 }
 
 .tri-pics
@@ -721,6 +722,11 @@ color: black;
 		margin-top: 30px;
 	}
 
+	.tri-pics ul li a img
+	{
+		min-width: 300px;
+	}
+
 }
 /*FEATURED*/
 
@@ -729,6 +735,7 @@ color: black;
 	padding: 25px 50px;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	box-sizing: border-box;
 }
 .featured-container h2
 {
@@ -837,6 +844,12 @@ color: #fff;
 .featured-images ul li img
 {
 	width: 100%;
+}
+@media (max-width:500px) {
+	.featured-container
+	{
+		padding:20px 0;
+	}
 }
 /*Brand names slide*/
 
@@ -1948,6 +1961,7 @@ p#control_next
 	}
 }
 
+
 /*OWL*/
 #owl-demo ul li{
   background: #3fbf79;
@@ -1958,6 +1972,7 @@ p#control_next
   -moz-border-radius: 3px;
   border-radius: 3px;
   text-align: center;
+	box-sizing: border-box;
 }
 .customNavigation{
   text-align: center;
