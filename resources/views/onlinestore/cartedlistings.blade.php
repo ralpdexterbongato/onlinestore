@@ -49,8 +49,8 @@
                     <form class="add-submit{{$cartedEach->id}}" action="{{route('addqty',[$cartedEach->id])}}" method="post">{{csrf_field()}}</form>
                   </div>
                 </div>
-                <h2 onclick="$('.remove-cart').submit()"><i class="fa fa-times"></i></h2>
-                <form class="remove-cart" action="{{route('remove-cart',[$cartedEach->id])}}" method="post">
+                <h2 onclick="$('.remove-cart{{$cartedEach->id}}').submit()"><i class="fa fa-times"></i></h2>
+                <form class="remove-cart{{$cartedEach->id}}" action="{{route('remove-cart',[$cartedEach->id])}}" method="post">
                   {{method_field('DELETE')}}
                   {{ csrf_field() }}
                 </form>

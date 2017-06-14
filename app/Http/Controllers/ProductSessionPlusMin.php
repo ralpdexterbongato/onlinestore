@@ -47,21 +47,15 @@ class ProductSessionPlusMin extends Controller
 
     public function DelCarted($id)
     {
-      if (Session::has('carted-products'))
+      $allcarted= Session::get('carted-products');
+      $allcarted = (array)$allcarted;
+      foreach ($allcarted as $key => $tobedeleted)
       {
-
-        $currentAll=Session::get('carted-products');
-        foreach (Session::get('carted-products') as $cartednow)
-        {
-
-          if ($cartednow->id == $id)
-          {
-            Session::flush('carted-products',$cartednow);
-            return redirect()->back();
-          }
-
+        if ($tobedeleted->id==$id) {
+          unset($allcarted[$key]);
         }
-
       }
+      Session::put('carted-products',$allcarted);
+      return redirect()->back();
     }
 }
